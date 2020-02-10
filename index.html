@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Annie & Andre's Adventures</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Shadows+Into+Light" rel="stylesheet" type='text/css'>	
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/flexslider.css">
+</head>
+<body>
+	<ul class="menu">
+		<li><a href="#about">About Us</a></li>
+		<li><a href="#favs">Adventures</a></li>
+		<li><a href="#contact">Socials</a></li>
+	</ul>
+
+	<header>
+		<h1>Our Summer Adventures</h1>
+	</header>
+
+	<section id="about">
+		<h1>How it all started...</h1>
+
+		<img class="profile" src="images/kareoke.jpg">
+
+		<p>Annie and Andre met in 2016, and quickly found they had a lot in common. They love video games, board games, card games... just games in general. But sometimes, they take a break from gaming and go explore the world... </p>
+		<p>First trip was a getaway to the exotic Sandusky, Ohio to spend 2 full days at Cedar Point Amusment Park. Annie decided to ride the fastest, biggest, newest ride in the park, and regreted it almost instantly. </p>
+		<p>Being a short drive away from Toronto, it seemed only natural that they would end up there. They did what the tourists do - A walk around the CN Tower, wandering the streets near Eatons Centre, and taking in a Blue Jays Game. </p>
+		<p>In 2019, Annie and Andre toured the scenic Niagara falls. They spend most of their time on Clifton Hill, and got a chance to see Marineland as well.</p>
+	</section>
+
+	<section id="favs">
+		<h1>Our Adventures</h1>
+		<img class="fav" src="images/Sandusky/IMG_1486.jpg" alt="Cedar Point, Sandusky, Ohio" text="Sandusky">
+		<img class="fav" src="images/Toronto/IMG_1514.jpg" alt="CN Tower">
+		<img class="fav" src="images/Niagara/IMG_1555.jpg" alt="Dino Golf">
+			<br>
+
+		<div class="flexslider">
+      		<ul class="slides">
+        		<li><img src="images/Sandusky/IMG_1451.jpg"></li>
+        		<li><img src="images/Sandusky/IMG_1463.jpg"></li>
+        		<li><img src="images/Toronto/IMG_1550.jpg"></li>
+        		<li><img src="images/Toronto/IMG_1550.jpg"></li>
+        		<li><img src="images/Toronto/IMG_1551.jpg"></li>
+        		<li><img src="images/Niagara/IMG_1602.jpg"></li>
+        		<li><img src="images/Niagara/IMG_1608.jpg"></li>
+      		</ul>
+    	</div>
+	</section>
+
+	<section id="contact">
+		<h1>Follow Us</h1>
+		<h4>Well, Follow Annie. Andre doesn't do much on the socials.</h4>
+		<a href="http://twitter.com/awraight"><img src="images/twitter.png"></a>
+		<a href="http://www.facebook.com/annie.wraight"><img src="images/facebook.png"></a>
+		<a href="http://www.linkedin.com/in/annie-wraight-162b0033/"><img src="images/linkedin.png"></a>
+	</section>
+
+
+  <script src="js/jquery-1.12.0.min.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // all jQuery code here
+
+      // Just some experimental code
+      $('.fav').click(function(){ // will watch for any images to be clicked
+        $(this).hide(1000); // will hide *all* the images
+      });
+
+      // Active menu
+      $(".menu a").click(function(){
+        //console.log("It works!");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+      });
+
+      // Flexslider plugin
+      $('.flexslider').flexslider();
+
+      $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+          && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+    });
+  </script>
+	
+</body>
+</html>
